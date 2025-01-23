@@ -1,6 +1,11 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css"
 
+import { Red_Hat_Display } from "next/font/google";
+
+const redHatDisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+})
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`antialiased`}
+        className={`${redHatDisplay.className} bg-background-primary text-content-body antialiased`}
       >
         {children}
       </body>
