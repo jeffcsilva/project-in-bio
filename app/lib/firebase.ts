@@ -5,13 +5,13 @@ import "server-only"
 
 // Certificado
 const decodedPrivateKey = Buffer.from(
-  process.env.FIREBASE_PRIVATE_KEY_BASE64 as string,
+  process.env.AUTH_FIREBASE_PRIVATE_KEY as string,
   "base64"
 ).toString("utf-8")
 
 export const firebaseCert = cert({
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  projectId: process.env.AUTH_FIREBASE_PROJECT_ID,
+  clientEmail: process.env.AUTH_FIREBASE_CLIENT_EMAIL,
   privateKey: decodedPrivateKey,
 })
 
